@@ -1,0 +1,115 @@
+C51 COMPILER V9.60.0.0   MATRIXKEYBOARD                                                    06/24/2020 20:18:52 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MATRIXKEYBOARD
+OBJECT MODULE PLACED IN .\Objects\matrixkeyboard.obj
+COMPILER INVOKED BY: D:\keil_c51\C51\BIN\C51.EXE lib\matrixkeyboard.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\e2;.\lib) DEBUG 
+                    -OBJECTEXTEND PRINT(.\Listings\matrixkeyboard.lst) TABS(2) OBJECT(.\Objects\matrixkeyboard.obj)
+
+line level    source
+
+   1          //跳线帽J5跳1，2，开启4*4矩阵键盘,P30~P33为横向，P34,P35,P42,P44为纵向链接
+   2          //P36,P37未连接任何元件（属于引出脚）可肆意控制
+   3          
+   4          #include <STC15F2K60S2.h>
+   5          #include <matrixkeyboard.h>
+   6          
+   7          
+   8          sbit p30=P3^0;
+   9          sbit p31=P3^1;
+  10          sbit p32=P3^2;
+  11          sbit p33=P3^3;
+  12          
+  13          sbit p34=P3^4;
+  14          sbit p35=P3^5;
+  15          sbit p42=P4^2;
+  16          sbit p44=P4^4;
+  17          
+  18          char check_press(void){ //返回按键号S4~19的数字
+  19   1        unsigned char x_num=0,y_num=0;
+  20   1        
+  21   1        x_control(1);
+  22   1        y_control(0);
+  23   1        if(check_x_state()!=1111){
+  24   2          delay__ms(10);  //消抖
+  25   2          if(check_x_state()!=1111){
+  26   3            switch(check_x_state()){
+  27   4              case 1110:x_num=0;break;
+  28   4              case 1101:x_num=1;break;
+  29   4              case 1011:x_num=2;break;
+  30   4              case 111:x_num=3;break;
+  31   4              default: break;
+  32   4            }
+  33   3            
+  34   3        x_control(0);
+  35   3        y_control(1);
+  36   3            switch(check_y_state()){
+  37   4              case 1110:y_num=4;break;
+  38   4              case 1101:y_num=8;break;
+  39   4              case 1011:y_num=12;break;
+  40   4              case 111:y_num=16;break;
+  41   4              default: break;
+  42   4            }
+  43   3            return (x_num+y_num);
+  44   3          }
+  45   2          return 0;
+  46   2        }
+  47   1        return 0;
+  48   1      }
+  49          
+  50          
+  51          
+  52          
+  53          void x_control(char state){ //传入参数state只有0和1两种
+  54   1        p30=state;
+C51 COMPILER V9.60.0.0   MATRIXKEYBOARD                                                    06/24/2020 20:18:52 PAGE 2   
+
+  55   1        p31=state;
+  56   1        p32=state;
+  57   1        p33=state;
+  58   1      }
+  59          
+  60          void y_control(char state){ //传入参数state只有0和1两种
+  61   1        p34=state;
+  62   1        p35=state;
+  63   1        p42=state;
+  64   1        p44=state;
+  65   1      }
+  66          
+  67          int check_x_state(void){
+  68   1        return ((char)p30*1000+(char)p31*100+(char)p32*10+(char)p33);
+  69   1      }
+  70          
+  71          int check_y_state(void){
+  72   1        return ((char)p34*1000+(char)p35*100+(char)p42*10+(char)p44);
+  73   1      }
+  74          
+  75          
+  76          
+  77          void delay__ms(unsigned int t)    //@11.0592MHz
+  78          { 
+  79   1        unsigned int z;
+  80   1        unsigned char i, j;
+  81   1        for(z=0;z<t;z++){
+  82   2          i = 15;
+  83   2          j = 90;
+  84   2          do
+  85   2          {
+  86   3            while (--j);
+  87   3          } while (--i);  
+  88   2        }
+  89   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    377    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

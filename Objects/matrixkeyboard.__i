@@ -1,0 +1,1 @@
+"lib\matrixkeyboard.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\e2;.\lib) DEBUG OBJECTEXTEND PRINT(.\Listings\matrixkeyboard.lst) TABS (2) OBJECT(.\Objects\matrixkeyboard.obj)

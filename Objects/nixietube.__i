@@ -1,0 +1,1 @@
+"lib\nixietube.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\e2;.\lib) DEBUG OBJECTEXTEND PRINT(.\Listings\nixietube.lst) TABS (2) OBJECT(.\Objects\nixietube.obj)

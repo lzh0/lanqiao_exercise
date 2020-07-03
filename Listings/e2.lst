@@ -1,0 +1,209 @@
+C51 COMPILER V9.60.0.0   E2                                                                07/03/2020 22:40:07 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE E2
+OBJECT MODULE PLACED IN .\Objects\e2.obj
+COMPILER INVOKED BY: D:\keil_c51\C51\BIN\C51.EXE e2\e2.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\e2;.\lib) DEBUG OBJECTEXTEND 
+                    -PRINT(.\Listings\e2.lst) TABS(2) OBJECT(.\Objects\e2.obj)
+
+line level    source
+
+   1          /*-----------------------³ÌĞòĞÅÏ¢----------------
+   2          ÎÄ¼şÃû£ºe2.c
+   3          
+   4          °æ±¾ºÅ£ºv2
+   5          
+   6          °æ±¾ĞÅÏ¢£ºv2020.7.3 20:54 release
+   7          
+   8          µ±Ç°°æ±¾¹¦ÄÜ£º8Î»È«ÏÔÊ¾£¬¼Ó¼õ³Ë³ıÆ½·½¿ª¸ùºÅÁùÖÖÔËËã,Ğ¡Êı¡¢¸ºÊıµÄÏÔÊ¾¡£
+   9          
+  10          µ±Ç°°æ±¾ÎÊÌâ£º1.ÎŞÇåÁã¡¢ÍËÎ»¼ü 2.//all_digital_tube_display(3.1415926535);//ÏÔÊ¾½á¹ûÊÇ3.1415927£¬Õ¦×Ô¶¯ËÄÉ
+             -áÎåÈëÁË
+  11          
+  12          ÏÂÒ»ĞÂ°æ±¾¹¦ÄÜ£º1.Ìí¼ÓÍËÎ»¡¢ÇåÁã¡¢Ğ¡Êıµã¡¢¸ººÅ°´¼ü 2.¼ÓÈëÖĞ¶Ï¡£¡¾matrixkeyboard¿âÕûÌåÖØ¹¹¡¿
+  13          
+  14          ÀúÊ·°æ±¾£º
+  15          v0¡¾µ¥¶À³ÉÁ¢ÁËÏÔÊ¾ºÍ¾ØÕó¼üÅÌÁ½¸ö¿â£¬ÊµÏÖÁËÕıÕûÊıµÄ¼Ó¼õ³Ë³ıÆ½·½¸ùºÅÔËËãµÄÕûÊıÏÔÊ¾¡¿
+  16          v1¡¾ÔÚÉÏ¸ö°æ±¾»ù´¡ÉÏ£¬ÊµÏÖÁËĞ¡ÊıµÄÏÔÊ¾¡¿
+  17          v2¡¾ÔÚÉÏ¸ö°æ±¾»ù´¡ÉÏ£¬ÊµÏÖÁË¸ºÊıÏÔÊ¾¡¿
+  18          
+  19          Ôø³öÏÖ¹ıÎÊÌâ£º
+  20          1.//all_digital_tube_display_v1³öÏÖ¿ª»úÄ¬ÈÏÏÔÊ¾8.0000000µÄÇé¿ö¡¾ÒÑ½â¾ö¡¿¡£ ÎÊÌâÔ­Òò£ºÍüÁË....
+  21          2.Ğ¡ÊıµãµÄÇ°Ò»Î»£¬¼´¸öÎ»Îª2µÄÇé¿öÏÂ£¬ÏÔÊ¾³ö´í¡¾ÒÑ½â¾ö¡¿¡£ ÎÊÌâÔ­Òò£ºÎ»Âë´íÎó.
+  22          3.ÏÔÊ¾Ğ¡ÓÚ1µÄĞ¡ÊıÊ±³öÏÖµÄ¸öÎ»0ÏÔÊ¾Îª³ıÊı´íÎóµÄÎÊÌâ¡¾ÒÑ½â¾ö¡¿¡£ ÎÊÌâÔ­Òò£ºchar int_part_array[8];Î´ÔÚ³õÊ¼»¯
+             -Ê±È«ÔªËØ·ùÖµ0£¬µ¼ÖÂÀ¬»ø/²ĞÁôÖ¸±»·ÃÎÊif (i == 0) {i++;} display((int_part_array[--i])+10,bits--);
+  23          4.
+  24          
+  25          ×Ü½á/½ÌÑµ/Ïë·¨£º
+  26          1.ñîºÏ¶È»¹ÊÇÌ«¸ß¡£
+  27          2.Ğ´´úÂëÖ®Ç°ÏÈ¹¹½¨ÏµÍ³¿ò¼Ü£¬È·¶¨Ä£¿é¡¢·â×°¡¢½Ó¿ÚµÄÉè¼Æ£¨ÎÒ¾õµÃÎÒĞèÒª¶ÁÒ»Ğ©Èí¼ş¹¤³ÌµÄÊé¼®£¬ÓÈÆäÊÇ´ó¹æÄ£³ÌĞò
+             -¿ª·¢Ïà¹ØµÄ£©¡£
+  28          3.·ÂÕæÕæºÃÓÃ£¬´úÂë×ªCµÄexe³ÌĞòºóÓÃÈí¼ş·ÂÕæÒ²ÂùÏãµÄ£¬²»¹ı»¹ÊÇÃ»ÓĞÖ±½ÓÔÚµ¥Æ¬»úÉÏ·ÂÕæÏã¡£Ò»°´°´¼ü¾Í·ÂÕæ¶Ï¿ª³ö
+             -´í£¬äÆ¡£
+  29          4.´úÂë»¹ÊÇÔ½¹æ·¶Ô½ºÃ£¬ÉùÃ÷ºóµÚÒ»¼şÊÂ¾ÍÊÇ£¬ÏÈÖÃÁãÁËÔÙËµ¡£
+  30          5.°æ±¾¿ØÖÆÌ«°ôÁË£¬gitÕæÏã£¬githubÕæºÃÓÃ£¬´µ±¬£¬Á½¸ö°æ±¾´úÂë¶Ô±ÈÇåÎúÃ÷ÏÔ£¬°®ÁË¡£
+  31          6.ÏÂ´ÎµÃ¼Ç°Ñ³ÌĞò´íÎó¡¢½â¾ö·½·¨¡¢ÎÊÌâÔ­Òò¶¼¼ÇÏÂÀ´¡£
+  32          7.¼ÇµÃ½¨ºÃ¹¤³Ìºó¾Í°Ñ³ÌĞòĞÅÏ¢¿ò¼ÓÁË£¬¼ÇÂ¼ºÃ°æ±¾Ê²Ã´µÄ¡£
+  33          8.ÓĞÊ±ºò±à³ÌÅöµ½ÊµÔÚ½â¾ö²»ÁËµÄÎÊÌâ¾ÍÔİÊ±Ìø¹ı£¿µÈ×ªÒ»È¦»ØÀ´Ò²Ğí¾ÍÍ»È»ÏëÍ¨ÁË¡£
+  34          -----------------------------------------*/
+  35          
+  36          
+  37          #include <STC15F2K60S2.h>
+  38          #include <nixietube.h>
+  39          #include <matrixkeyboard.h>
+  40          #include <math.h> //ÓÃÓÚ´¦Àí¸ùºÅ
+  41          
+  42          unsigned char fun_state;//º¯Êı°´¼ü¼ÆÊı
+  43          double keynum,now_display_num,last_display_num; 
+  44          
+  45          
+  46          void cls_buzz_and_leds(void);
+  47          double add(double n1,double n2);
+  48          double subtract(double n1,double n2);
+  49          double multiply(double n1,double n2);
+  50          double divide(double n1,double n2);
+C51 COMPILER V9.60.0.0   E2                                                                07/03/2020 22:40:07 PAGE 2   
+
+  51          double square(double n1);
+  52          double square_root(double n1);
+  53          
+  54          /*
+  55          //------------------------------------------²âÊÔÓÃ--------------------------------------------------------
+             ---------------
+  56          double a=1,l=3;
+  57          
+  58          void main(void){
+  59          
+  60            
+  61            while(1){
+  62              all_digital_tube_display_v1(divide(a,l));//result:0.66666   Õı³£
+  63              
+  64          
+  65            }
+  66          }
+  67          //--------------------------------------------------------------------------------------------------------
+             ----------------
+  68          */
+  69          
+  70          
+  71          
+  72          void main(void){
+  73   1        fun_state=0;//³õÊ¼»¯ÖÃÁã
+  74   1        keynum=0;
+  75   1        now_display_num=0;
+  76   1        last_display_num=0;
+  77   1        cls_buzz_and_leds();
+  78   1      
+  79   1        
+  80   1        
+  81   1        //all_digital_tube_display_v1(now_display_num);delay_ms(500);//³É¹¦ÏÔÊ¾0
+  82   1        
+  83   1        while(1){
+  84   2          
+  85   2          if(check_press()!=0){
+  86   3            
+  87   3            keynum=check_press(); //¼üÅÌ·µ»ØÖµ»º´æ
+  88   3            delay_ms(100);  //ÓÃÓÚ±ÜÃâ°´¼ü°´ÏÂºóÈ¡ÖµÌ«¿ì£¬È¡µ½²»ÏëÒªµÄÖØ¸´Öµ
+  89   3            
+  90   3            if(keynum<14){  //°´ÏÂµÄÊÇÊı×Ö²¿·Ö
+  91   4              now_display_num=now_display_num*10+(keynum-4);
+  92   4            }
+  93   3            
+  94   3            else{ //°´ÏÂµÄÊÇ¹¦ÄÜ²¿·Ö°´¼ü£¬¼ÇÂ¼°´ÏÂ°´¼üºÅ£¬Èô°´ÏÂÁ½´ÎÏàÍ¬µÄ¹¦ÄÜ°´¼ü£¬ÔòµÈ¼ÛÎª=²Ù×÷(Á½¸öÊıÔËËã)£¬ÈôÊÇ
+             -Ö»ÓĞÒ»¸öÊıµÄÔËËã£¬ÔòÖ±½Ó³ö½á¹û
+  95   4              if(keynum<18){  //ĞèÒªÁ½´®Êı×Ö²ÎÓëµÄÔËËã
+  96   5                
+  97   5                if(fun_state==0){ //¹¦ÄÜ°´¼üÖ®Ç°Ã»ÓĞ°´ÏÂµÄ×´Ì¬£¬ÔòÖ´ĞĞ°´ÏÂ¶ÔÓ¦¹¦ÄÜµÄ²Ù×÷
+  98   6                  last_display_num=now_display_num; //µ±Ç°ÏÔÊ¾Êı×Ö±¸·İ
+  99   6                  now_display_num=0;//µ±Ç°ÏÔÊ¾ÇåÁã
+ 100   6                  fun_state=keynum; //°´ÏÂµÄ¹¦ÄÜ°´¼ü¼ÇÂ¼
+ 101   6                  keynum=0;
+ 102   6                }
+ 103   5                
+ 104   5                else{ //Èô¹¦ÄÜ°´¼üÖ®Ç°Ö´ĞĞ¹ı²Ù×÷£¬ÔòÖ±½ÓÖ´ĞĞ=Çó½á¹û²Ù×÷
+ 105   6                  //all_digital_tube_display_v1(0); Ã»ÄÜ½â¾ö1/3=3.3333µÄÎÊÌâ
+ 106   6                  switch(fun_state){
+ 107   7                    case 14: now_display_num=add(last_display_num,now_display_num);break;
+ 108   7                    case 15: now_display_num=subtract(last_display_num,now_display_num);break;
+ 109   7                    case 16: now_display_num=multiply(last_display_num,now_display_num);break;
+C51 COMPILER V9.60.0.0   E2                                                                07/03/2020 22:40:07 PAGE 3   
+
+ 110   7                    case 17: now_display_num=divide(last_display_num,now_display_num);break;
+ 111   7                    default:all_digital_tube_display(9999);break; //´íÎóÌáÊ¾
+ 112   7                  }
+ 113   6                }
+ 114   5                
+ 115   5              }
+ 116   4              
+ 117   4              else{ //Ö»ĞèÒªÒ»´®Êı×ÖµÄÔËËã
+ 118   5                if(keynum==18){now_display_num=square(now_display_num);}
+ 119   5                else{now_display_num=square_root(now_display_num);}
+ 120   5              }
+ 121   4              
+ 122   4            }
+ 123   3            
+ 124   3          }
+ 125   2          all_digital_tube_display(now_display_num);
+ 126   2          
+ 127   2        } //while(1)}
+ 128   1      }//main(void)}
+ 129          
+ 130          
+ 131          void cls_buzz_and_leds(void) //¹Øµô·äÃùÆ÷ºÍ°åÔØleds
+ 132          {
+ 133   1        P2 = (P2&0x1F|0xA0);  //ÊÊÓÃ»·¾³ÊµÑéÅäÖÃ£ºJ3ÌøÏßÅäÖÃÎªIO·½Ê½£¬J5ÅäÖÃÎªKBD¡¢J2ÅäÖÃÎª1-3ºÍ2-4
+ 134   1        P0 = 0x00;
+ 135   1        P2 &= 0x1F;
+ 136   1        delay_ms(10);
+ 137   1        P2 = ((P2&0x1f)|0x80);
+ 138   1        P0 = 0xff;  //LED¹Ø
+ 139   1        P2 &= 0x1f;
+ 140   1        delay_ms(10);
+ 141   1      }
+ 142          
+ 143          /*
+ 144          */
+ 145          
+ 146          double add(double n1,double n2){  // +
+ 147   1        return (n1+n2);
+ 148   1      }
+ 149          
+ 150          double subtract(double n1,double n2){ // -
+ 151   1        return (n1-n2);
+ 152   1        
+ 153   1      }
+ 154          double multiply(double n1,double n2){ // x
+ 155   1        return (n1*n2);
+ 156   1      }
+ 157          double divide(double n1,double n2){ // /
+ 158   1        return (n1/n2);
+ 159   1      }
+ 160          
+ 161          double square(double n1){ //^2
+ 162   1        return (n1*n1);
+ 163   1      }
+ 164          double square_root(double n1){  //¡Ì
+ 165   1        return (double)sqrt(n1);
+ 166   1      }
+ 167          
+ 168          
+ 169          
+ 170          
+ 171          
+C51 COMPILER V9.60.0.0   E2                                                                07/03/2020 22:40:07 PAGE 4   
+
+ 172          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    535    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     13      32
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

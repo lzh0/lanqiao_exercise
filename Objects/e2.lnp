@@ -1,0 +1,6 @@
+".\Objects\STARTUP.obj",
+".\Objects\e2.obj",
+".\Objects\nixietube.obj",
+".\Objects\matrixkeyboard.obj" 
+TO ".\Objects\e2" 
+PRINT(".\Listings\e2.m51") RAMSIZE(256) 
